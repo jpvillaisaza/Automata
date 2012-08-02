@@ -1,9 +1,9 @@
 -- | Examples of two-way deterministic finite automata
 module Automata.Data.TDFA.Examples where
 
-import Automata.Data.TDFA
+import Automata.Data.TDFA ( TDFA(MkTDFA), Way(L,R,S) )
 
-import Data.Set
+import Data.Set ( fromList, singleton )
 
 data StateM = Q0 | Q1 deriving (Eq, Ord)
 
