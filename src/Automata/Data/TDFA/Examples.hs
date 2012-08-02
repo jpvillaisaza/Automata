@@ -14,12 +14,12 @@ m :: TDFA StateM SymbolM
 m = MkTDFA
     (fromList [Q0, Q1])
     (fromList [A, B])
-    delta
+    deltaM
     Q0
     (singleton Q1)
   where
-    delta :: StateM -> SymbolM -> (StateM, Way)
-    delta Q0 A = (Q0, R)
-    delta Q0 B = (Q1, S)
-    delta Q1 A = (Q0, L)
-    delta Q1 B = (Q0, L)
+    deltaM :: StateM -> SymbolM -> (StateM, Way)
+    deltaM Q0 A = (Q0, R)
+    deltaM Q0 B = (Q1, S)
+    deltaM Q1 A = (Q0, L)
+    deltaM Q1 B = (Q0, L)
