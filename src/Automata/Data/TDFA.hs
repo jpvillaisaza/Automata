@@ -1,7 +1,11 @@
 -- | Two-way deterministic finite automata
-module Automata.Data.TDFA where
+module Automata.Data.TDFA
+  ( TDFA(MkTDFA, delta, initial, states, symbols, finals)
+  , Way(L,R,S)
+  )
+where
 
-import Data.Set
+import Data.Set ( Set )
 
 -- | A way.
 data Way = L -- ^ Left
